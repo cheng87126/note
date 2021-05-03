@@ -1,12 +1,12 @@
 import fetch from 'node-fetch'
 
-function HomePage() {
-  return <div>Welcome to Next.js!</div>
+function HomePage({data}) {
+  return <div>{data.name} Welcome to Next.js!</div>
 }
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/list')
-  console.log('res',res)
+  const server = process.env.NODE_ENV !== 'production'?'http://localhost:3000':'https://note-liart.vercel.app/'
+  const res = await fetch(`${server}/api/list`)
   const data = await res.json()
   return { props: { data } }
 }
