@@ -1,7 +1,18 @@
 import fetch from 'node-fetch'
 
 function HomePage({data}) {
-  return <div>{data.name} Welcome to Next.js!</div>
+  return (
+    <>
+      <div>Welcome to Next.js! </div>
+      <ul>
+        {data.list.map(item=>(
+          <li key={item._id}>
+            <a href={item.url_name}>{item.url_name}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )
 }
 
 export async function getServerSideProps() {
