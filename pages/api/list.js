@@ -11,7 +11,6 @@ export default function handler(req, res) {
         .find()
         .toArray((e,result)=>{
           if(e) throw e
-          console.log('res',result)
           res.status(200).json({ list:result })
         })
     })()

@@ -16,8 +16,7 @@ function HomePage({data}) {
 }
 
 export async function getServerSideProps() {
-  const server = process.env.NODE_ENV !== 'production'?'http://localhost:3000':'https://note-liart.vercel.app/'
-  const res = await fetch(`${server}/api/list`)
+  const res = await fetch(`${process.env.VERCEL_URL}/api/list`)
   const data = await res.json()
   return { props: { data } }
 }
