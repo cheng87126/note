@@ -18,7 +18,7 @@ function HomePage({data}) {
 export async function getServerSideProps() {
   // const res = await fetch(`${process.env.VERCEL_URL}/api/list`)
   // const data = await res.json()
-  return { props: { data:[] } }
+  return { props: { data:{list:[]} } }
 }
 
 export default HomePage
