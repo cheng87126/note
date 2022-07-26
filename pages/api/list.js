@@ -2,6 +2,8 @@ import mongodb from 'mongodb'
 
 const { MongoClient } = mongodb
 export default function handler(req, res) {
+  res.status(200).json({ list:result })
+  /*
   MongoClient.connect(process.env.DB,{ useUnifiedTopology: true },(err,db)=>{
     if (err) throw err
     const dbase = db.db('chat')
@@ -15,4 +17,5 @@ export default function handler(req, res) {
         })
     })()
   })
+  */
 }
