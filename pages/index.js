@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
 
 function HomePage({data}) {
   return (
@@ -16,9 +16,9 @@ function HomePage({data}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.VERCEL_URL}/api/list`)
-  const data = await res.json()
-  return { props: { data } }
+  // const res = await fetch(`${process.env.VERCEL_URL}/api/list`)
+  // const data = await res.json()
+  return { props: { data:[] } }
 }
 
 export default HomePage
